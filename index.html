@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caro &amp; Tomás · 23 de Enero 2027</title>
+<meta name="description" content="¡Nos casamos! Acompáñanos a celebrar una nueva etapa juntos. 23 de Enero de 2027.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Caro &amp; Tomás · Nos casamos">
+<meta property="og:description" content="23 de Enero 2027 · 17:00 hrs · Quinta de Tilcoco, VI Región">
+<meta property="og:image" content="portada.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Cormorant+SC:wght@300;400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3EFE6; --body:#57503F; --headc:#221E16; --mute:#8A8271; --gold:#A98436;
+  --line:#DFD7C4; --card:#FAF7EF;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sc:'Cormorant SC',Georgia,serif;
+  --sans:'Jost',Helvetica,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--body);font-family:var(--sans);font-weight:300;line-height:1.75;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 18% 22%,rgba(169,132,54,.05),transparent 42%),
+    radial-gradient(circle at 82% 68%,rgba(169,132,54,.045),transparent 44%),
+    repeating-linear-gradient(0deg,rgba(120,105,70,.035) 0 1px,transparent 1px 3px),
+    repeating-linear-gradient(90deg,rgba(120,105,70,.035) 0 1px,transparent 1px 3px)}
+img{max-width:100%;display:block}
+section{padding:104px 26px;max-width:1000px;margin:0 auto}
+.center{text-align:center}
+.center p{margin-left:auto;margin-right:auto}
+.eyebrow{font-family:var(--sc);font-size:13px;letter-spacing:.34em;color:var(--headc);margin-bottom:14px}
+h2{font-family:var(--sc);font-size:clamp(24px,4.2vw,38px);font-weight:400;letter-spacing:.14em;
+  color:var(--headc);line-height:1.25;margin-bottom:18px}
+h2::after{content:'\276E \2726 \276F';display:block;font-family:var(--serif);font-size:14px;
+  color:var(--gold);letter-spacing:.5em;margin-top:16px}
+p{font-size:15.5px;max-width:58ch;color:var(--body)}
+.mt{margin-top:14px}
+.dim{opacity:.75;font-size:.9em}
+.quote{font-family:var(--serif);font-style:italic;font-size:23px;color:var(--headc);margin-top:34px}
+
+/* ---------- PORTADA ---------- */
+.hero{height:100svh;min-height:640px;position:relative;display:flex;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;color:#F6F1E5}
+.hero-photo{position:absolute;inset:0;background:linear-gradient(180deg,#243447 0%,#3D4A57 32%,#8A6B4E 55%,#E08A3C 68%,#F2B45C 74%,#4A3A2E 86%,#1C1712 100%)}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 58%}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(0deg,rgba(28,24,18,.8) 4%,rgba(28,24,18,.16) 55%,rgba(28,24,18,.4))}
+.hero-frame{position:absolute;inset:26px;border:1px solid rgba(230,213,175,.6);pointer-events:none}
+.hero-frame::after{content:'';position:absolute;inset:9px;border:1px solid rgba(230,213,175,.3)}
+.corner{position:absolute;width:110px;height:110px;color:var(--gold);opacity:.8;pointer-events:none}
+.corner.tl{top:36px;left:36px}
+.corner.br{bottom:36px;right:36px;transform:rotate(180deg)}
+.hero-in{position:relative;z-index:3;padding:40px 26px}
+.pre{font-family:var(--sc);font-size:15px;letter-spacing:.44em;color:#EFE3CF}
+.names{font-family:var(--serif);font-weight:300;font-size:clamp(50px,13vw,112px);line-height:1;
+  color:#F6F1E5;margin:14px 0}
+.amp{display:block;font-size:.4em;color:#E6D5AF;font-style:italic;margin:8px 0}
+.sub{font-size:14.5px;color:#E8DECB;max-width:40ch;margin:0 auto;line-height:1.8}
+.hdate{margin-top:24px;display:inline-block;padding:11px 24px;
+  border-top:1px solid rgba(230,213,175,.6);border-bottom:1px solid rgba(230,213,175,.6);
+  font-family:var(--sc);font-size:14px;letter-spacing:.3em;color:#F0E6D4}
+.scroll{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);z-index:3;
+  font-family:var(--sc);font-size:12px;letter-spacing:.3em;color:rgba(240,230,212,.85)}
+.scroll span{display:block;width:1px;height:40px;background:var(--gold);margin:0 auto 10px;animation:dr 2.4s infinite}
+@keyframes dr{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}
+  51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- TABLERO DE CUENTA REGRESIVA ---------- */
+.tablero{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:38px auto 0;max-width:560px}
+.cbox{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);
+  padding:26px 6px 18px;box-shadow:0 2px 16px rgba(34,30,22,.05)}
+.cbox::before{content:'';position:absolute;inset:6px;border:1px solid rgba(169,132,54,.26);
+  pointer-events:none}
+/* ranura central, como un tablero de aletas */
+.cbox b::after{content:'';position:absolute;left:-24px;right:-24px;top:50%;height:1px;
+  background:rgba(34,30,22,.16)}
+.cbox b{display:block;position:relative;z-index:2;font-family:var(--serif);
+  font-size:clamp(36px,8vw,56px);font-weight:500;line-height:1;color:var(--headc);
+  font-variant-numeric:tabular-nums}
+.cbox small{display:block;position:relative;z-index:2;font-family:var(--sc);font-size:11.5px;
+  letter-spacing:.24em;color:var(--gold);margin-top:14px}
+
+/* ---------- LUGARES ---------- */
+.lugares{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+.lugar{background:var(--card);border:1px solid var(--line);padding:46px 30px;text-align:center;position:relative}
+.lugar::before{content:'';position:absolute;inset:9px;border:1px solid rgba(169,132,54,.28);pointer-events:none}
+.lugar .ico{width:30px;height:30px;fill:var(--gold);color:var(--gold);margin:0 auto 16px}
+.lugar h3{font-family:var(--sc);font-size:19px;font-weight:400;letter-spacing:.24em;color:var(--headc)}
+.lugar .hora{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--gold);margin:4px 0 16px}
+.lugar p{font-family:var(--serif);font-size:18px;line-height:1.6;margin:0 auto;color:var(--headc)}
+.lugar h3 + p{margin-top:16px}
+.lugar .zona{display:block;font-family:var(--sans);font-size:13px;color:var(--mute);margin-top:6px}
+.novios{font-family:var(--serif);font-size:17px;color:var(--mute);margin-top:30px;text-align:center;font-style:italic}
+
+/* ---------- DETALLES ---------- */
+.detalles{display:grid;grid-template-columns:repeat(3,1fr);margin-top:44px;
+  border:1px solid var(--line);background:var(--card)}
+.dbox{padding:42px 22px;text-align:center;border-right:1px solid var(--line)}
+.dbox:last-child{border-right:none}
+.dbox .ico{width:28px;height:28px;fill:var(--gold);color:var(--gold);margin:0 auto 14px}
+.ico .hole{fill:var(--card)}
+.dlab{font-family:var(--sc);font-size:13px;letter-spacing:.26em;color:var(--gold);margin-bottom:8px}
+.dval{font-family:var(--serif);font-size:19px;color:var(--headc);line-height:1.5}
+
+/* ---------- BOTONES ---------- */
+.btn{display:inline-block;margin-top:22px;padding:13px 30px;font-family:var(--sans);font-size:10.5px;
+  letter-spacing:.28em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.3s;
+  background:transparent;color:var(--headc);border:1px solid #C3B896}
+.btn:hover{background:var(--headc);color:var(--bg);border-color:var(--headc)}
+.btn-sm{padding:10px 22px;font-size:9.5px;margin-top:18px}
+.btn-lg{padding:17px 44px;margin-top:30px}
+.btn-solid{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn-solid:hover{background:#8E6C28;border-color:#8E6C28;color:#fff}
+
+/* ---------- HISTORIA / FOTOS ---------- */
+.s-story{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;align-items:start}
+.s-story > div:last-child{padding-top:6px}
+.s-story .ph-tall{position:sticky;top:60px}
+.s-story p{font-size:15px;line-height:1.85}
+.corazon{color:var(--gold);font-size:.95em}
+.cierre-historia{font-family:var(--serif) !important;font-style:italic;font-size:19px !important;
+  color:var(--headc) !important;margin-top:26px;line-height:1.6}
+.cierre-historia.firma{color:var(--gold) !important;margin-top:10px;font-size:20px !important}
+.ph{background:linear-gradient(160deg,#E7E0CE,#C9C0A9);display:flex;align-items:center;justify-content:center;
+  font-size:9px;letter-spacing:.34em;color:rgba(34,30,22,.3);box-shadow:0 1px 0 rgba(34,30,22,.06);
+  overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph-tall{aspect-ratio:3/4}
+/* galería */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:42px}
+.gitem{padding:0;border:none;background:#E7E0CE;cursor:pointer;aspect-ratio:3/4;overflow:hidden;
+  position:relative;display:block;box-shadow:0 1px 0 rgba(34,30,22,.06)}
+.gitem img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .4s ease}
+.gitem:hover img{transform:scale(1.05);filter:brightness(1.05)}
+.gitem.ancho{grid-column:span 2;aspect-ratio:3/2}
+
+/* visor */
+.visor{position:fixed;inset:0;z-index:60;background:rgba(20,17,12,.94);
+  display:flex;align-items:center;justify-content:center;padding:56px 20px}
+.visor[hidden]{display:none}
+.visor img{max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.visor button{position:absolute;background:none;border:none;color:#EFE3CF;cursor:pointer;
+  font-size:28px;line-height:1;padding:14px;transition:.2s}
+.visor button:hover{color:#fff}
+.v-cerrar{top:12px;right:16px;font-size:36px}
+.v-ant{left:6px;top:50%;transform:translateY(-50%)}
+.v-sig{right:6px;top:50%;transform:translateY(-50%)}
+
+/* ---------- DRESS CODE ---------- */
+.swatches{display:flex;justify-content:center;gap:12px;margin-top:30px;flex-wrap:wrap}
+.sw{width:58px;height:58px;box-shadow:0 0 0 1px rgba(34,30,22,.08)}
+
+/* ---------- REGALOS ---------- */
+.regalo{background:var(--card);border:1px solid var(--line);padding:52px 34px;max-width:560px;
+  margin:34px auto 0;position:relative;box-shadow:0 2px 24px rgba(34,30,22,.05)}
+.regalo::before{content:'';position:absolute;inset:9px;border:1px solid rgba(169,132,54,.28);pointer-events:none}
+.regalo p{font-family:var(--serif);font-size:19px;color:var(--headc)}
+.regalo-intro{margin:0 auto}
+.regalo-pd{font-family:var(--sans) !important;font-size:13.5px !important;color:var(--mute) !important;
+  margin:26px auto 0;max-width:44ch}
+
+/* sobre de transferencia */
+.sobre{margin-top:30px;text-align:left}
+.sobre-tit{font-family:var(--sc);font-size:13px;letter-spacing:.28em;color:var(--gold);
+  text-align:center;margin-bottom:18px}
+.datos{list-style:none;border-top:1px solid var(--line)}
+.datos li{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding:2px 0}
+.datos .k{font-family:var(--sc);font-size:12.5px;letter-spacing:.2em;color:var(--mute);
+  width:92px;flex:none}
+.datos .v{flex:1;text-align:left;background:none;border:none;cursor:pointer;padding:11px 30px 11px 0;
+  font-family:var(--serif);font-size:17px;color:var(--headc);position:relative;transition:.25s;
+  word-break:break-word}
+.datos .v::after{content:'⧉';position:absolute;right:4px;top:50%;transform:translateY(-50%);
+  color:var(--gold);font-size:15px;opacity:.5;transition:.25s}
+.datos .v:hover{color:var(--gold)}
+.datos .v:hover::after{opacity:1}
+.datos .v.ok{color:var(--gold)}
+.datos .v.ok::after{content:'✓';opacity:1}
+.tip{font-family:var(--sans) !important;font-size:12.5px !important;color:var(--mute) !important;
+  text-align:center;margin-top:14px}
+#copiar-todo{width:100%;margin-top:24px}
+
+/* iconos de fiesta */
+.fiesta-ico{display:flex;justify-content:center;gap:22px;margin-top:40px;color:var(--gold)}
+.fiesta-ico svg{width:32px;height:32px;opacity:.75;transition:.35s}
+.fiesta-ico svg:hover{opacity:1;transform:translateY(-4px)}
+
+/* aviso de copiado */
+.toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);z-index:70;
+  background:var(--headc);color:#F6F1E5;font-family:var(--sc);font-size:14px;letter-spacing:.16em;
+  padding:12px 26px;opacity:0;pointer-events:none;transition:.35s}
+.toast.ver{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- RSVP ---------- */
+.s-rsvp{max-width:none;background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.s-rsvp .in{max-width:1000px;margin:0 auto}
+.rsvp-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.limite{font-family:var(--serif);font-size:20px;color:var(--headc);margin-top:6px}
+
+/* formulario de confirmación */
+.rsvp-form{max-width:440px;margin:34px auto 0;text-align:left}
+.campo{display:block;margin-bottom:26px}
+.campo[hidden]{display:none}
+.etq{display:block;font-family:var(--sc);font-size:13px;letter-spacing:.22em;color:var(--gold);
+  margin-bottom:12px;text-align:center}
+.rsvp-form input[type=text]{width:100%;background:var(--bg);border:1px solid var(--line);
+  padding:14px 16px;font-family:var(--serif);font-size:17px;color:var(--headc);
+  text-align:center;outline:none;transition:.25s}
+.rsvp-form input[type=text]::placeholder{color:#B4AB98;font-style:italic}
+.rsvp-form input[type=text]:focus{border-color:var(--gold);background:#fff}
+.opciones{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.op{position:relative;flex:1;min-width:120px}
+.op input{position:absolute;opacity:0;width:0;height:0}
+.op span{display:block;text-align:center;padding:14px 12px;border:1px solid var(--line);
+  background:var(--bg);font-family:var(--serif);font-size:16px;color:var(--headc);
+  cursor:pointer;transition:.25s}
+.op span:hover{border-color:#C3B896}
+.op input:checked + span{background:var(--gold);border-color:var(--gold);color:#fff}
+.op input:focus-visible + span{outline:2px solid var(--gold);outline-offset:2px}
+#cual-dieta{margin-top:10px}
+#cual-dieta[hidden]{display:none}
+#rsvp-enviar{width:100%;margin-top:6px}
+.rsvp-msg{font-family:var(--serif) !important;font-size:17px !important;text-align:center;
+  margin-top:18px;min-height:1.6em;color:var(--gold) !important}
+.rsvp-msg.error{color:#9B3B3B !important}
+.rsvp-form.enviado .campo,.rsvp-form.enviado #rsvp-enviar{display:none}
+.rsvp-form.enviado .rsvp-msg{font-size:20px !important;margin-top:0}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:640px;margin:40px auto 0;text-align:left}
+.faq details{border-bottom:1px solid var(--line);padding:20px 0}
+.faq summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:18px;
+  display:flex;justify-content:space-between;gap:16px;color:var(--headc)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';color:var(--gold);font-size:19px;line-height:1}
+.faq details[open] summary::after{content:'\2013'}
+.faq p{margin-top:11px;font-size:14.5px;color:var(--mute)}
+
+/* ---------- PIE ---------- */
+footer{text-align:center;padding:84px 26px 66px;border-top:1px solid var(--line)}
+.heart{color:var(--gold);font-size:22px;margin:6px 0 14px}
+.fnames{font-family:var(--serif);font-size:clamp(30px,6vw,44px);color:var(--headc);font-weight:400}
+.fdate{font-family:var(--sc);font-size:14px;letter-spacing:.28em;color:var(--gold);margin-top:8px}
+.paws{display:flex;justify-content:center;gap:14px;margin-top:34px;align-items:flex-end}
+.pawwrap{text-align:center}
+.paw{width:42px;height:42px;margin:0 auto}
+.paw.dark{fill:#221E16}
+.paw.light{fill:#D6C9AC}
+.pawname{font-family:var(--sc);font-size:12px;letter-spacing:.2em;color:var(--mute);margin-top:8px}
+.hash{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gold);margin-top:30px}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .95s ease,transform .95s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:760px){
+  section{padding:74px 22px}
+  .s-story{grid-template-columns:1fr;gap:26px}
+  .s-story .ph-tall{aspect-ratio:4/5;position:static}
+  .lugares{grid-template-columns:1fr}
+  .detalles{grid-template-columns:1fr}
+  .dbox{border-right:none;border-bottom:1px solid var(--line)}
+  .dbox:last-child{border-bottom:none}
+  .gal{grid-template-columns:1fr 1fr;gap:8px}
+  .gitem.ancho{grid-column:span 2;aspect-ratio:16/10}
+  .datos .k{width:78px;font-size:11.5px}
+  .datos .v{font-size:15.5px}
+  .fiesta-ico{gap:16px}
+  .fiesta-ico svg{width:27px;height:27px}
+  .corner{width:74px;height:74px;top:28px;left:28px}
+  .corner.br{bottom:28px;right:28px;top:auto;left:auto}
+  .tablero{gap:8px}
+  .cbox{padding:20px 2px 14px}
+  .cbox small{font-size:9.5px;letter-spacing:.14em;margin-top:11px}
+  .sw{width:46px;height:46px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ PORTADA ============ -->
+<header class="hero">
+  <div class="hero-photo"><img src="portada.jpg" alt="Caro y Tomás" onerror="this.style.display='none'"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-frame"></div>
+  <svg class="corner tl" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 46 C 26 44, 40 30, 44 10"/><path d="M14 40 C 20 34, 30 34, 34 26"/><path d="M20 44 C 28 42, 36 34, 38 24"/></g><g fill="currentColor" opacity=".85"><ellipse cx="15" cy="36" rx="7" ry="3.4" transform="rotate(-38 15 36)"/><ellipse cx="26" cy="27" rx="7" ry="3.4" transform="rotate(-42 26 27)"/><ellipse cx="36" cy="17" rx="7" ry="3.4" transform="rotate(-46 36 17)"/><ellipse cx="24" cy="41" rx="6" ry="3" transform="rotate(12 24 41)"/><ellipse cx="34" cy="31" rx="6" ry="3" transform="rotate(8 34 31)"/></g></svg>
+  <svg class="corner br" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 46 C 26 44, 40 30, 44 10"/><path d="M14 40 C 20 34, 30 34, 34 26"/><path d="M20 44 C 28 42, 36 34, 38 24"/></g><g fill="currentColor" opacity=".85"><ellipse cx="15" cy="36" rx="7" ry="3.4" transform="rotate(-38 15 36)"/><ellipse cx="26" cy="27" rx="7" ry="3.4" transform="rotate(-42 26 27)"/><ellipse cx="36" cy="17" rx="7" ry="3.4" transform="rotate(-46 36 17)"/><ellipse cx="24" cy="41" rx="6" ry="3" transform="rotate(12 24 41)"/><ellipse cx="34" cy="31" rx="6" ry="3" transform="rotate(8 34 31)"/></g></svg>
+  <div class="hero-in">
+    <div class="pre">¡Nos casamos!</div>
+    <h1 class="names">Caro<span class="amp">&amp;</span>Tomás</h1>
+    <p class="sub">Acompáñanos a celebrar una nueva etapa juntos.</p>
+    <div class="hdate">23 · Enero · 2027</div>
+  </div>
+  <div class="scroll"><span></span>Desliza</div>
+</header>
+
+<!-- ============ CUENTA REGRESIVA ============ -->
+<section class="center reveal">
+  <h2>Cuenta regresiva</h2>
+  <div class="tablero">
+    <div class="cbox"><b id="cd">—</b><small>Días</small></div>
+    <div class="cbox"><b id="ch">—</b><small>Horas</small></div>
+    <div class="cbox"><b id="cm">—</b><small>Minutos</small></div>
+    <div class="cbox"><b id="cs">—</b><small>Segundos</small></div>
+  </div>
+  <p class="quote">«Te invitamos a celebrar el siguiente capítulo de nuestra historia.»</p>
+</section>
+
+<!-- ============ HISTORIA ============ -->
+<section class="s-story reveal">
+  <div class="ph ph-tall"><img src="foto-historia.jpg" alt="Caro y Tomás"></div>
+  <div>
+    <div class="eyebrow">Nuestra historia</div>
+    <h2>Cómo llegamos aquí</h2>
+    <p>Todo comenzó un frío martes 16 de julio de 2024. Un almuerzo de feriado en un restaurante de Barrio Lastarria fue el escenario de nuestra primera cita. La invitación era a las 14:00 horas… y, fiel a su estilo, Tomás llegó un poco tarde. Sin saberlo, ese pequeño retraso marcaría el inicio de la historia más importante de nuestras vidas.</p>
+    <p class="mt">Con el paso de los días, los meses y cada momento compartido, entendimos que ya no queríamos caminar por separado. Así comenzó nuestra familia, con la llegada de Lomito, y con ella nacieron nuevos sueños, viajes, proyectos y un futuro que, desde entonces, empezamos a construir como uno solo.</p>
+    <p class="mt">Hasta que llegó el viernes 8 de mayo de 2026. En una cálida noche en Playa del Carmen, rodeados de emoción, complicidad y mucho amor, dimos el primer «Sí» con una inolvidable petición de matrimonio.</p>
+    <p class="mt">Poco tiempo después, el 15 de julio de 2026, volvimos a decir «Sí», esta vez uniendo nuestras vidas por el civil y dando un nuevo paso en nuestra historia. Desde ese momento, ya éramos cuatro: Tomás, Caro, Lomito y Chori. <span class="corazon">&#10084;</span></p>
+    <p class="mt">Hoy queremos dar un paso más y celebrar nuestra unión ante Dios, rodeados de las personas que más queremos. Por eso, nos haría inmensamente felices que nos acompañaras a ser parte de este día tan especial.</p>
+    <p class="cierre-historia">Porque las mejores historias no terminan con un «Sí»…<br>apenas comienzan.</p>
+    <p class="cierre-historia firma">Y la nuestra… continuará. <span class="corazon">&#10084;</span></p>
+  </div>
+</section>
+
+<!-- ============ LUGARES ============ -->
+<section class="center reveal">
+  <div class="eyebrow">El gran día</div>
+  <h2>Ceremonia y celebración</h2>
+  <div class="lugares">
+    <div class="lugar">
+      <svg viewBox="0 0 24 24" class="ico"><path d="M12 2v3M10.5 3.5h3" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M12 5 5 10.5V21h14V10.5L12 5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 12v6M9.5 14.5h5" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg>
+      <h3>Ceremonia</h3>
+      <div class="hora">17:00 hrs</div>
+      <p>Capilla Santa Rosa de la Puente Alta<span class="zona">La Puente Alta · O'Higgins</span></p>
+      <a class="btn btn-sm" href="https://waze.com/ul/h63vs2x15m" target="_blank" rel="noopener">Cómo llegar</a>
+    </div>
+    <div class="lugar">
+      <svg viewBox="0 0 24 24" class="ico"><path d="M7 3v6a5 5 0 0 0 10 0V3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 14v6M8.5 20.5h7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M7 6.5h10" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+      <h3>Celebración</h3>
+      <p>Angostura Golf Country Club<span class="zona">Casona Monetta<br>Ruta 5 Sur Km 59 · Mostazal, O'Higgins</span></p>
+      <a class="btn btn-sm" href="https://waze.com/ul/h63vwyunmu" target="_blank" rel="noopener">Cómo llegar</a>
+    </div>
+  </div>
+  <p class="novios">Tomás Ignacio Flores Villanelo &amp; Mireya Carolina Ogaz Contreras</p>
+</section>
+
+<!-- ============ DETALLES ============ -->
+<section class="center reveal">
+  <div class="eyebrow">Los detalles</div>
+  <h2>Lo que debes saber</h2>
+  <div class="detalles">
+    <div class="dbox">
+      <svg viewBox="0 0 24 24" class="ico"><rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.6h17M8 3.2v3.4M16 3.2v3.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="15" r="1.6"/></svg>
+      <div class="dlab">Fecha</div>
+      <div class="dval">Sábado 23 de enero<br><span class="dim">2027</span></div>
+    </div>
+    <div class="dbox">
+      <svg viewBox="0 0 24 24" class="ico"><circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 6.8V12l3.6 2.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <div class="dlab">Hora</div>
+      <div class="dval">17:00 hrs<br><span class="dim">Puntualidad</span></div>
+    </div>
+    <div class="dbox">
+      <svg viewBox="0 0 24 24" class="ico"><path d="M8.5 3 4 5.2v4.4h2.6V21h10.8V9.6H20V5.2L15.5 3a3.6 3.6 0 0 1-7 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <div class="dlab">Dress code</div>
+      <div class="dval">De gala<br><span class="dim">Tu mejor versión</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERÍA ============ -->
+<section class="center reveal">
+  <div class="eyebrow">Galería</div>
+  <h2>Nosotros</h2>
+  <div class="gal">
+    <button class="gitem" data-i="0"><img src="fotos/g01.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="1"><img src="fotos/g02.jpg" alt="" loading="lazy"></button>
+    <button class="gitem ancho" data-i="2"><img src="fotos/g03.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="3"><img src="fotos/g04.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="4"><img src="fotos/g05.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="5"><img src="fotos/g06.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="6"><img src="fotos/g07.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="7"><img src="fotos/g08.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="8"><img src="fotos/g09.jpg" alt="" loading="lazy"></button>
+  </div>
+</section>
+
+<!-- ============ VISOR DE GALERÍA ============ -->
+<div class="visor" id="visor" hidden>
+  <button class="v-cerrar" aria-label="Cerrar">&times;</button>
+  <button class="v-ant" aria-label="Anterior">&#10094;</button>
+  <img id="v-img" src="" alt="">
+  <button class="v-sig" aria-label="Siguiente">&#10095;</button>
+</div>
+
+<!-- ============ REGALOS ============ -->
+<section class="center reveal">
+  <div class="eyebrow">Regalos</div>
+  <h2>¿Quieres enviarnos un regalo?</h2>
+  <div class="regalo">
+    <p class="regalo-intro">Tu presencia es el mejor regalo.<br>
+    Pero si quieres aportar al siguiente capítulo, aquí van los datos.</p>
+
+    <div class="sobre">
+      <div class="sobre-tit">Transferencia electrónica</div>
+      <ul class="datos">
+        <li><span class="k">Nombre</span><button class="v" data-copiar="Tomás Ignacio Flores Villanelo">Tomás Ignacio Flores Villanelo</button></li>
+        <li><span class="k">RUT</span><button class="v" data-copiar="12.345.678-9">12.345.678-9</button></li>
+        <li><span class="k">Banco</span><button class="v" data-copiar="Banco de Chile">Banco de Chile</button></li>
+        <li><span class="k">Tipo</span><button class="v" data-copiar="Cuenta Corriente">Cuenta Corriente</button></li>
+        <li><span class="k">N° cuenta</span><button class="v" data-copiar="00012345678">00012345678</button></li>
+        <li><span class="k">Correo</span><button class="v" data-copiar="tomasfloresvillanelo@gmail.com">tomasfloresvillanelo@gmail.com</button></li>
+      </ul>
+      <button class="btn btn-solid btn-full" id="copiar-todo">Copiar todos los datos</button>
+      <p class="tip">Toca cualquier dato para copiarlo por separado.</p>
+    </div>
+
+    <p class="regalo-pd">P.D.: si transfieres, pon tu nombre en el mensaje — así sabemos a quién agradecerle.</p>
+  </div>
+</section>
+
+<!-- ============ RSVP ============ -->
+<section class="s-rsvp reveal">
+  <div class="in center">
+    <div class="eyebrow">Confirmación</div>
+    <h2>¿Nos acompañas?</h2>
+    <p>Te pedimos confirmar tu asistencia antes del</p>
+    <div class="limite">1 de diciembre de 2026</div>
+    <form class="rsvp-form" id="rsvp">
+      <label class="campo">
+        <span class="etq">Nombre y apellido</span>
+        <input type="text" name="Nombre" required autocomplete="name" placeholder="Escribe tu nombre">
+      </label>
+
+      <div class="campo">
+        <span class="etq">¿Nos acompañas?</span>
+        <div class="opciones">
+          <label class="op"><input type="radio" name="Asiste" value="Sí, ahí estaré" required><span>Sí, ahí estaré</span></label>
+          <label class="op"><input type="radio" name="Asiste" value="No podré ir"><span>No podré ir</span></label>
+        </div>
+      </div>
+
+      <div class="campo cond" id="bloque-dieta" hidden>
+        <span class="etq">¿Tienes alguna restricción alimentaria?</span>
+        <div class="opciones">
+          <label class="op"><input type="radio" name="Restriccion" value="Sí"><span>Sí</span></label>
+          <label class="op"><input type="radio" name="Restriccion" value="No"><span>No</span></label>
+        </div>
+        <input type="text" name="Cual" id="cual-dieta" placeholder="¿Cuál? (opcional)" hidden>
+      </div>
+
+      <button type="submit" class="btn btn-solid btn-lg" id="rsvp-enviar">Confirmar asistencia</button>
+      <p class="rsvp-msg" id="rsvp-msg"></p>
+    </form>
+    <div class="fiesta-ico" aria-hidden="true">
+      <!-- copas -->
+      <svg viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5h9l-2.6 7.4a2.6 2.6 0 0 1-4.9 0z"/><path d="M10.4 13v11M7 24h7"/><path d="M17 5h9l-2.6 7.4a2.6 2.6 0 0 1-4.9 0z"/><path d="M21.4 13v11M18 24h7"/></g></svg>
+      <!-- nota musical -->
+      <svg viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V7l12-2.6v15"/><circle cx="8.6" cy="23" r="3.4"/><circle cx="20.6" cy="20.4" r="3.4"/><path d="M12 11.6l12-2.6"/></g></svg>
+      <!-- torta -->
+      <svg viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 26h22v-8a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3z"/><path d="M5 20.4c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2"/><path d="M16 15V9M13.6 6.4c0 1.3 2.4 2.6 2.4 2.6s2.4-1.3 2.4-2.6A2.4 2.4 0 0 0 16 4.4a2.4 2.4 0 0 0-2.4 2z"/></g></svg>
+      <!-- baile / confeti -->
+      <svg viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 28l7.6-15.2 8.6 8.6z"/><path d="M14 10.4l7.6 7.6"/><path d="M20 12c2-2 2-5 0-7M24 15c3.4-3.4 3.4-8.6 0-12"/><circle cx="26" cy="20" r="1.1"/><circle cx="21" cy="6" r="1.1"/><circle cx="29" cy="10" r="1.1"/></g></svg>
+      <!-- brindis / anillos -->
+      <svg viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="19" r="7"/><circle cx="21" cy="19" r="7"/><path d="M16.5 8.2 19 5l2.5 3.2" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="center reveal">
+  <div class="eyebrow">Dudas</div>
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq">
+    <details><summary>¿Puedo llevar niños?</summary><p>Amamos a sus hijos, pero hemos decidido que sea una celebración solo para adultos.</p></details>
+    <details><summary>¿Hay estacionamiento?</summary><p>Sí, hay estacionamiento para todos dentro del recinto.</p></details>
+    <details><summary>¿Hasta cuándo puedo confirmar?</summary><p>Hasta el 1 de diciembre de 2026, para poder cerrar la lista con el salón.</p></details>
+    <details><summary>¿Puedo llevar acompañante?</summary><p>Tu invitación indica cuántos cupos tienes reservados. Si tienes dudas, avísanos al confirmar.</p></details>
+  </div>
+</section>
+
+<!-- ============ PIE ============ -->
+<footer>
+  <div class="eyebrow">Gracias por acompañarnos</div>
+  <div class="heart">&#10084;</div>
+  <div class="fnames">Caro &amp; Tomás</div>
+  <div class="fdate">23 Enero 2027</div>
+  <div class="paws">
+    <div class="pawwrap">
+      <svg viewBox="0 0 64 64" class="paw dark"><ellipse cx="20" cy="20" rx="8" ry="11" transform="rotate(-18 20 20)"/><ellipse cx="34" cy="14" rx="7.5" ry="11" transform="rotate(-5 34 14)"/><ellipse cx="47" cy="20" rx="7" ry="10" transform="rotate(16 47 20)"/><ellipse cx="55" cy="34" rx="6.5" ry="9" transform="rotate(34 55 34)"/><path d="M34 28c9 0 16 7 16 14 0 6-6 9-16 9s-16-3-16-9c0-7 7-14 16-14z"/></svg>
+      <div class="pawname">Lomo</div>
+    </div>
+    <div class="pawwrap">
+      <svg viewBox="0 0 64 64" class="paw light"><ellipse cx="20" cy="20" rx="8" ry="11" transform="rotate(-18 20 20)"/><ellipse cx="34" cy="14" rx="7.5" ry="11" transform="rotate(-5 34 14)"/><ellipse cx="47" cy="20" rx="7" ry="10" transform="rotate(16 47 20)"/><ellipse cx="55" cy="34" rx="6.5" ry="9" transform="rotate(34 55 34)"/><path d="M34 28c9 0 16 7 16 14 0 6-6 9-16 9s-16-3-16-9c0-7 7-14 16-14z"/></svg>
+      <div class="pawname">Chori</div>
+    </div>
+  </div>
+  <div class="hash">#MatriCaroyTomas</div>
+</footer>
+
+<script>
+/* Fecha del matrimonio: 23 de enero de 2027, 17:00 (Chile continental, verano = UTC-3) */
+var FECHA = new Date('2027-01-23T17:00:00-03:00');
+function tick(){
+  var t = FECHA - new Date();
+  if(t <= 0){ document.querySelector('.count').style.display='none'; return; }
+  var p = function(n){ return String(n).padStart(2,'0'); };
+  document.getElementById('cd').textContent = Math.floor(t/864e5);
+  document.getElementById('ch').textContent = p(Math.floor(t/36e5)%24);
+  document.getElementById('cm').textContent = p(Math.floor(t/6e4)%60);
+  document.getElementById('cs').textContent = p(Math.floor(t/1e3)%60);
+}
+tick(); setInterval(tick,1000);
+
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(x){ if(x.isIntersecting) x.target.classList.add('in'); });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+/* ---------- aviso "copiado" ---------- */
+var toast = document.createElement('div');
+toast.className = 'toast';
+document.body.appendChild(toast);
+var toastT;
+function aviso(txt){
+  toast.textContent = txt;
+  toast.classList.add('ver');
+  clearTimeout(toastT);
+  toastT = setTimeout(function(){ toast.classList.remove('ver'); }, 1800);
+}
+function copiar(txt){
+  if(navigator.clipboard && window.isSecureContext){ return navigator.clipboard.writeText(txt); }
+  var ta = document.createElement('textarea');
+  ta.value = txt; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.select();
+  try{ document.execCommand('copy'); }catch(e){}
+  document.body.removeChild(ta);
+  return Promise.resolve();
+}
+
+/* ---------- datos de transferencia ---------- */
+document.querySelectorAll('.datos .v').forEach(function(b){
+  b.addEventListener('click', function(){
+    copiar(b.dataset.copiar).then(function(){
+      b.classList.add('ok');
+      aviso('Copiado');
+      setTimeout(function(){ b.classList.remove('ok'); }, 1800);
+    });
+  });
+});
+var btnTodo = document.getElementById('copiar-todo');
+if(btnTodo){
+  btnTodo.addEventListener('click', function(){
+    var txt = [];
+    document.querySelectorAll('.datos li').forEach(function(li){
+      txt.push(li.querySelector('.k').textContent + ': ' + li.querySelector('.v').dataset.copiar);
+    });
+    copiar(txt.join('\n')).then(function(){
+      btnTodo.textContent = '¡Datos copiados!';
+      aviso('Datos copiados');
+      setTimeout(function(){ btnTodo.textContent = 'Copiar todos los datos'; }, 2200);
+    });
+  });
+}
+
+/* ---------- confirmación de asistencia ---------- */
+/* Cambia este correo por el tuyo si quieres recibir las respuestas en otra casilla. */
+var CORREO_RSVP = 'tomasfloresvillanelo@gmail.com';
+
+var form = document.getElementById('rsvp');
+if(form){
+  var bloqueDieta = document.getElementById('bloque-dieta');
+  var cual = document.getElementById('cual-dieta');
+  var msg = document.getElementById('rsvp-msg');
+  var enviar = document.getElementById('rsvp-enviar');
+
+  /* la restricción alimentaria solo aparece si confirma que viene */
+  form.querySelectorAll('input[name="Asiste"]').forEach(function(r){
+    r.addEventListener('change', function(){
+      var viene = r.value.indexOf('Sí') === 0;
+      bloqueDieta.hidden = !viene;
+      if(!viene){
+        form.querySelectorAll('input[name="Restriccion"]').forEach(function(x){ x.checked = false; });
+        cual.value = ''; cual.hidden = true;
+      }
+    });
+  });
+  form.querySelectorAll('input[name="Restriccion"]').forEach(function(r){
+    r.addEventListener('change', function(){ cual.hidden = (r.value !== 'Sí'); });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var datos = {
+      _subject: 'Confirmación de asistencia · Caro & Tomás',
+      _template: 'table',
+      _captcha: 'false'
+    };
+    new FormData(form).forEach(function(v, k){ datos[k] = v; });
+
+    enviar.disabled = true;
+    enviar.textContent = 'Enviando…';
+    msg.className = 'rsvp-msg';
+    msg.textContent = '';
+
+    fetch('https://formsubmit.co/ajax/' + CORREO_RSVP, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(datos)
+    })
+    .then(function(r){ if(!r.ok) throw new Error('http'); return r.json(); })
+    .then(function(){
+      form.classList.add('enviado');
+      msg.textContent = '¡Gracias! Tu respuesta quedó registrada.';
+    })
+    .catch(function(){
+      enviar.disabled = false;
+      enviar.textContent = 'Confirmar asistencia';
+      msg.className = 'rsvp-msg error';
+      msg.textContent = 'No pudimos enviar tu respuesta. Inténtalo de nuevo en un momento.';
+    });
+  });
+}
+
+/* ---------- visor de galería ---------- */
+var fotos = Array.prototype.map.call(document.querySelectorAll('.gitem img'), function(i){ return i.src; });
+var visor = document.getElementById('visor');
+var vImg  = document.getElementById('v-img');
+var actual = 0;
+function abrir(i){ actual = i; vImg.src = fotos[i]; visor.hidden = false; document.body.style.overflow='hidden'; }
+function cerrar(){ visor.hidden = true; document.body.style.overflow=''; }
+function mover(d){ actual = (actual + d + fotos.length) % fotos.length; vImg.src = fotos[actual]; }
+document.querySelectorAll('.gitem').forEach(function(b){
+  b.addEventListener('click', function(){ abrir(+b.dataset.i); });
+});
+if(visor){
+  visor.querySelector('.v-cerrar').addEventListener('click', cerrar);
+  visor.querySelector('.v-ant').addEventListener('click', function(e){ e.stopPropagation(); mover(-1); });
+  visor.querySelector('.v-sig').addEventListener('click', function(e){ e.stopPropagation(); mover(1); });
+  visor.addEventListener('click', function(e){ if(e.target === visor || e.target === vImg) cerrar(); });
+  document.addEventListener('keydown', function(e){
+    if(visor.hidden) return;
+    if(e.key === 'Escape') cerrar();
+    if(e.key === 'ArrowRight') mover(1);
+    if(e.key === 'ArrowLeft') mover(-1);
+  });
+}
+</script>
+</body>
+</html>
