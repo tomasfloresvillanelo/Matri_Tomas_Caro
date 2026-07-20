@@ -562,8 +562,10 @@ if(btnTodo){
   });
 }
 
-/* ---------- confirmación de asistencia ---------- */
-/* Cambia este correo por el tuyo si quieres recibir las respuestas en otra casilla. */
+/* ---------- confirmación de asistencia ----------
+   Pega aquí la URL del Apps Script (termina en /exec).
+   Mientras esté vacía, las respuestas se envían por correo con FormSubmit. */
+var URL_RSVP = 'https://script.google.com/macros/s/AKfycbx-C_Bm58KqGh1MnPjTbJTf0IqWqL2ZhW6CSDNkLqA6rp4eDEcNzXumIKltH-3Erq8h/exec';
 var CORREO_RSVP = 'tomasfloresvillanelo@gmail.com';
 
 var form = document.getElementById('rsvp');
@@ -602,11 +604,19 @@ if(form){
     msg.className = 'rsvp-msg';
     msg.textContent = '';
 
-    fetch('https://formsubmit.co/ajax/' + CORREO_RSVP, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify(datos)
-    })
+    var peticion = URL_RSVP
+      ? fetch(URL_RSVP, {
+          method: 'POST',
+          headers: {'Content-Type': 'text/plain;charset=utf-8'},
+          body: JSON.stringify(datos)
+        })
+      : fetch('https://formsubmit.co/ajax/' + CORREO_RSVP, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+          body: JSON.stringify(datos)
+        });
+
+    peticion
     .then(function(r){ if(!r.ok) throw new Error('http'); return r.json(); })
     .then(function(){
       form.classList.add('enviado');
