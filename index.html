@@ -106,6 +106,8 @@ p{font-size:15.5px;max-width:58ch;color:var(--body)}
 .ico .hole{fill:var(--card)}
 .dlab{font-family:var(--sc);font-size:13px;letter-spacing:.26em;color:var(--gold);margin-bottom:8px}
 .dval{font-family:var(--serif);font-size:19px;color:var(--headc);line-height:1.5}
+.nota{display:block;font-family:var(--sans);font-size:11.5px;line-height:1.6;color:var(--mute);
+  margin-top:10px;max-width:23ch;margin-left:auto;margin-right:auto}
 
 /* ---------- BOTONES ---------- */
 .btn{display:inline-block;margin-top:22px;padding:13px 30px;font-family:var(--sans);font-size:10.5px;
@@ -228,6 +230,21 @@ p{font-size:15.5px;max-width:58ch;color:var(--body)}
 .rsvp-msg.error{color:#9B3B3B !important}
 .rsvp-form.enviado .campo,.rsvp-form.enviado #rsvp-enviar{display:none}
 .rsvp-form.enviado .rsvp-msg{font-size:20px !important;margin-top:0}
+
+/* ---------- PLAYLIST ---------- */
+.playlist-lead{font-family:var(--serif);font-size:19px;color:var(--headc);line-height:1.6}
+.spoti{display:inline-block;margin-top:36px;text-decoration:none;color:var(--gold);position:relative}
+.spoti-disco{display:block;width:96px;height:96px;margin:0 auto;border-radius:50%;
+  background:#1DB954;color:#fff;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 30px rgba(29,185,84,.28);transition:transform .35s ease,box-shadow .35s ease}
+.spoti-disco svg{width:60px;height:60px;fill:currentColor}
+.spoti:hover .spoti-disco{transform:translateY(-5px) scale(1.04);
+  box-shadow:0 16px 38px rgba(29,185,84,.38)}
+.spoti-flecha{display:block;width:52px;margin:6px auto -4px;color:var(--gold)}
+.spoti-flecha svg{width:100%;height:auto}
+.spoti-txt{display:block;font-family:var(--sc);font-size:15px;letter-spacing:.26em;
+  color:var(--gold);transition:.3s}
+.spoti:hover .spoti-txt{color:var(--headc)}
 
 /* ---------- FAQ ---------- */
 .faq{max-width:640px;margin:40px auto 0;text-align:left}
@@ -364,7 +381,8 @@ footer{text-align:center;padding:84px 26px 66px;border-top:1px solid var(--line)
     <div class="dbox">
       <svg viewBox="0 0 24 24" class="ico"><path d="M8.5 3 4 5.2v4.4h2.6V21h10.8V9.6H20V5.2L15.5 3a3.6 3.6 0 0 1-7 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
       <div class="dlab">Dress code</div>
-      <div class="dval">De gala<br><span class="dim">Tu mejor versión</span></div>
+      <div class="dval">De gala<br><span class="dim">Tu mejor versión</span>
+        <span class="nota">Los colores blancos y similares se reservan a la novia.</span></div>
     </div>
   </div>
 </section>
@@ -464,6 +482,24 @@ footer{text-align:center;padding:84px 26px 66px;border-top:1px solid var(--line)
       <svg viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="19" r="7"/><circle cx="21" cy="19" r="7"/><path d="M16.5 8.2 19 5l2.5 3.2" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
     </div>
   </div>
+</section>
+
+<!-- ============ PLAYLIST ============ -->
+<section class="s-playlist center reveal">
+  <div class="eyebrow">La música</div>
+  <h2>Para que nadie se quede sentado…</h2>
+  <p class="playlist-lead">¡Ayúdanos a armar la playlist!<br>
+  ¿Cuál es ese temazo que te hará correr a la pista de baile?</p>
+
+  <a class="spoti" href="https://open.spotify.com/playlist/2V8vGS3yVJ1vMotcLN27ED?si=41nKrmfORLyT-QnRawh86w" target="_blank" rel="noopener">
+    <span class="spoti-disco">
+      <svg viewBox="0 0 24 24" aria-label="Spotify"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.16-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+    </span>
+    <span class="spoti-flecha">
+      <svg viewBox="0 0 60 46" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M30 44C30 30 24 16 12 8"/><path d="M6 16 11.4 7l9.6 3.4"/></g></svg>
+    </span>
+    <span class="spoti-txt">Click aquí</span>
+  </a>
 </section>
 
 <!-- ============ FAQ ============ -->
