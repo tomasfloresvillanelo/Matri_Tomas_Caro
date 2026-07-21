@@ -141,6 +141,35 @@ p{font-size:15.5px;max-width:58ch;color:var(--body)}
 .gitem:hover img{transform:scale(1.05);filter:brightness(1.05)}
 .gitem.ancho{grid-column:span 2;aspect-ratio:3/2}
 
+/* ---------- BOTÓN DE MÚSICA ---------- */
+.btn-musica{position:fixed;right:20px;bottom:20px;z-index:50;width:52px;height:52px;
+  border-radius:50%;border:1px solid rgba(169,132,54,.5);background:var(--card);
+  color:var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 22px rgba(34,30,22,.16);transition:transform .3s ease,box-shadow .3s ease}
+.btn-musica[hidden]{display:none}
+.btn-musica:hover{transform:scale(1.07);box-shadow:0 8px 26px rgba(34,30,22,.22)}
+.btn-musica .nota{display:flex}
+.btn-musica .nota svg{width:22px;height:22px}
+/* halo que invita a tocarlo, solo mientras está en pausa */
+.btn-musica::after{content:'';position:absolute;inset:-1px;border-radius:50%;
+  border:1px solid var(--gold);opacity:0;animation:latido 2.8s ease-out infinite}
+@keyframes latido{0%{transform:scale(1);opacity:.55}70%{transform:scale(1.5);opacity:0}100%{opacity:0}}
+.btn-musica.sonando::after{animation:none}
+/* ecualizador mientras suena */
+.btn-musica .ondas{display:none;align-items:flex-end;gap:3px;height:18px}
+.btn-musica.sonando .ondas{display:flex}
+.btn-musica.sonando .nota{display:none}
+.btn-musica .ondas i{display:block;width:2.5px;background:var(--gold);border-radius:2px;
+  animation:onda .9s ease-in-out infinite}
+.btn-musica .ondas i:nth-child(1){height:8px;animation-delay:0s}
+.btn-musica .ondas i:nth-child(2){height:16px;animation-delay:.18s}
+.btn-musica .ondas i:nth-child(3){height:11px;animation-delay:.36s}
+.btn-musica .ondas i:nth-child(4){height:17px;animation-delay:.12s}
+@keyframes onda{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+@media(prefers-reduced-motion:reduce){
+  .btn-musica::after,.btn-musica .ondas i{animation:none}
+}
+
 /* visor */
 .visor{position:fixed;inset:0;z-index:60;background:rgba(20,17,12,.94);
   display:flex;align-items:center;justify-content:center;padding:56px 20px}
@@ -412,6 +441,15 @@ footer{text-align:center;padding:84px 26px 66px;border-top:1px solid var(--line)
     <button class="gitem" data-i="8"><img src="fotos/g09.jpg" alt="" loading="lazy"></button>
   </div>
 </section>
+
+<!-- ============ MÚSICA DE FONDO ============ -->
+<audio id="musica" src="musica.mp3" loop preload="none"></audio>
+<button class="btn-musica" id="btn-musica" aria-label="Reproducir música" hidden>
+  <span class="nota">
+    <svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17V5l10-2v12"/><circle cx="6.6" cy="17.4" r="2.6"/><circle cx="16.6" cy="15.4" r="2.6"/></g></svg>
+  </span>
+  <span class="ondas"><i></i><i></i><i></i><i></i></span>
+</button>
 
 <!-- ============ VISOR DE GALERÍA ============ -->
 <div class="visor" id="visor" hidden>
@@ -699,6 +737,62 @@ if(form){
     });
   });
 }
+
+/* ---------- música de fondo ----------
+   Necesita un archivo llamado musica.mp3 junto al index.html.
+   Si no existe, el botón simplemente no aparece. */
+(function(){
+  var audio = document.getElementById('musica');
+  var boton = document.getElementById('btn-musica');
+  if(!audio || !boton) return;
+
+  var VOLUMEN = 0.35;   // volumen final (0 a 1)
+  var fundido;
+
+  /* solo mostramos el botón si el archivo existe y se puede reproducir */
+  audio.addEventListener('canplay', function(){ boton.hidden = false; }, {once:true});
+  audio.addEventListener('error', function(){ boton.hidden = true; });
+  audio.preload = 'metadata';
+  audio.load();
+
+  function subir(){
+    clearInterval(fundido);
+    audio.volume = 0;
+    fundido = setInterval(function(){
+      audio.volume = Math.min(VOLUMEN, audio.volume + 0.02);
+      if(audio.volume >= VOLUMEN) clearInterval(fundido);
+    }, 60);
+  }
+  function bajar(){
+    clearInterval(fundido);
+    fundido = setInterval(function(){
+      audio.volume = Math.max(0, audio.volume - 0.04);
+      if(audio.volume <= 0){ clearInterval(fundido); audio.pause(); }
+    }, 40);
+  }
+
+  boton.addEventListener('click', function(){
+    if(audio.paused){
+      audio.play().then(function(){
+        boton.classList.add('sonando');
+        boton.setAttribute('aria-label', 'Pausar música');
+        subir();
+      }).catch(function(){ /* el navegador la bloqueó */ });
+    } else {
+      boton.classList.remove('sonando');
+      boton.setAttribute('aria-label', 'Reproducir música');
+      bajar();
+    }
+  });
+
+  /* al abrir una foto en pantalla completa, bajamos un poco el volumen */
+  var obs = new MutationObserver(function(){
+    if(audio.paused) return;
+    audio.volume = document.getElementById('visor').hidden ? VOLUMEN : VOLUMEN * 0.4;
+  });
+  var v = document.getElementById('visor');
+  if(v) obs.observe(v, {attributes:true, attributeFilter:['hidden']});
+})();
 
 /* ---------- visor de galería ---------- */
 var fotos = Array.prototype.map.call(document.querySelectorAll('.gitem img'), function(i){ return i.src; });
