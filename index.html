@@ -5,10 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Caro &amp; Tomás · 23 de Enero 2027</title>
 <meta name="description" content="¡Nos casamos! Acompáñanos a celebrar una nueva etapa juntos. 23 de Enero de 2027.">
+<!-- la invitación se reparte por link, no queremos que los datos de transferencia queden en buscadores -->
+<meta name="robots" content="noindex">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://tomasfloresvillanelo.github.io/Matri_Tomas_Caro/">
 <meta property="og:title" content="Caro &amp; Tomás · Nos casamos">
 <meta property="og:description" content="23 de Enero 2027 · 17:00 hrs · Quinta de Tilcoco, VI Región">
-<meta property="og:image" content="portada.jpg">
+<!-- OJO: las URLs de og:image deben ser absolutas o WhatsApp no muestra la foto -->
+<meta property="og:image" content="https://tomasfloresvillanelo.github.io/Matri_Tomas_Caro/portada.jpg">
+<meta property="og:image:width" content="960">
+<meta property="og:image:height" content="1280">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -167,7 +175,7 @@ p{font-size:15.5px;max-width:58ch;color:var(--body)}
 .btn-musica .ondas i:nth-child(4){height:17px;animation-delay:.12s}
 @keyframes onda{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
 @media(prefers-reduced-motion:reduce){
-  .btn-musica::after,.btn-musica .ondas i{animation:none}
+  .btn-musica::after,.btn-musica .ondas i,.mapa-ruta{animation:none}
 }
 
 /* visor */
@@ -191,7 +199,22 @@ p{font-size:15.5px;max-width:58ch;color:var(--body)}
   margin:34px auto 0;position:relative;box-shadow:0 2px 24px rgba(34,30,22,.05)}
 .regalo::before{content:'';position:absolute;inset:9px;border:1px solid rgba(169,132,54,.28);pointer-events:none}
 .regalo p{font-family:var(--serif);font-size:19px;color:var(--headc)}
-.regalo-intro{margin:0 auto}
+.regalo-intro{margin:0 auto;line-height:1.6}
+/* la pregunta del sueño, destacada al final de la intro */
+.destino{display:block;margin-top:16px;font-style:italic;color:var(--gold);font-size:20px}
+
+/* mapa del viaje: Chile -> Finlandia */
+.mapa-vuelo{display:block;width:100%;max-width:420px;height:auto;margin:34px auto 0}
+.mapa-pais{fill:rgba(169,132,54,.2);stroke:var(--gold);stroke-width:.9;
+  stroke-linejoin:round;stroke-linecap:round}
+.mapa-ruta{fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linecap:round;
+  stroke-dasharray:5 7;animation:ruta 2.6s linear infinite}
+@keyframes ruta{to{stroke-dashoffset:-12}}
+.mapa-avion{fill:var(--headc)}
+.mapa-punto{fill:var(--gold)}
+.mapa-halo{fill:none;stroke:var(--gold);stroke-width:1;opacity:.45}
+.mapa-lab{font-family:var(--sc);font-size:15px;letter-spacing:.14em;
+  fill:var(--mute);text-anchor:middle}
 
 /* sobre de transferencia */
 .sobre{margin-top:30px;text-align:left}
@@ -213,6 +236,7 @@ p{font-size:15.5px;max-width:58ch;color:var(--body)}
 .tip{font-family:var(--sans) !important;font-size:12.5px !important;color:var(--mute) !important;
   text-align:center;margin-top:14px}
 #copiar-todo{width:100%;margin-top:24px}
+
 
 /* iconos de fiesta */
 .fiesta-ico{display:flex;justify-content:center;gap:22px;margin-top:40px;color:var(--gold)}
@@ -430,15 +454,16 @@ footer{text-align:center;padding:84px 26px 66px;border-top:1px solid var(--line)
   <div class="eyebrow">Galería</div>
   <h2>Nosotros</h2>
   <div class="gal">
-    <button class="gitem" data-i="0"><img src="fotos/g01.jpg" alt="" loading="lazy"></button>
-    <button class="gitem" data-i="1"><img src="fotos/g02.jpg" alt="" loading="lazy"></button>
-    <button class="gitem ancho" data-i="2"><img src="fotos/g03.jpg" alt="" loading="lazy"></button>
-    <button class="gitem" data-i="3"><img src="fotos/g04.jpg" alt="" loading="lazy"></button>
-    <button class="gitem" data-i="4"><img src="fotos/g05.jpg" alt="" loading="lazy"></button>
-    <button class="gitem" data-i="5"><img src="fotos/g06.jpg" alt="" loading="lazy"></button>
-    <button class="gitem" data-i="6"><img src="fotos/g07.jpg" alt="" loading="lazy"></button>
-    <button class="gitem" data-i="7"><img src="fotos/g08.jpg" alt="" loading="lazy"></button>
-    <button class="gitem" data-i="8"><img src="fotos/g09.jpg" alt="" loading="lazy"></button>
+    <!-- el nombre accesible va en el botón; la img queda decorativa para no repetirlo -->
+    <button class="gitem" data-i="0" aria-label="Ampliar foto 1 de 9"><img src="fotos/g01.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="1" aria-label="Ampliar foto 2 de 9"><img src="fotos/g02.jpg" alt="" loading="lazy"></button>
+    <button class="gitem ancho" data-i="2" aria-label="Ampliar foto 3 de 9"><img src="fotos/g03.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="3" aria-label="Ampliar foto 4 de 9"><img src="fotos/g04.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="4" aria-label="Ampliar foto 5 de 9"><img src="fotos/g05.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="5" aria-label="Ampliar foto 6 de 9"><img src="fotos/g06.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="6" aria-label="Ampliar foto 7 de 9"><img src="fotos/g07.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="7" aria-label="Ampliar foto 8 de 9"><img src="fotos/g08.jpg" alt="" loading="lazy"></button>
+    <button class="gitem" data-i="8" aria-label="Ampliar foto 9 de 9"><img src="fotos/g09.jpg" alt="" loading="lazy"></button>
   </div>
 </section>
 
@@ -464,8 +489,30 @@ footer{text-align:center;padding:84px 26px 66px;border-top:1px solid var(--line)
   <div class="eyebrow">Regalos</div>
   <h2>¿Quieres enviarnos un regalo?</h2>
   <div class="regalo">
-    <p class="regalo-intro">Tu presencia es el mejor regalo.<br>
-    Pero si quieres aportar al siguiente capítulo, aquí van los datos.</p>
+    <p class="regalo-intro">Nuestro mayor regalo es que nos acompañes.<br>
+    Si además quieres hacernos un presente, tenemos un gran sueño: cruzar el mundo para ver juntos las auroras boreales en el Círculo Polar.
+    <span class="destino">¿Nos ayudas a llegar a Rovaniemi?</span></p>
+
+    <!-- siluetas simplificadas de Chile y Finlandia, con la ruta punteada entre ambas -->
+    <svg class="mapa-vuelo" viewBox="-18 0 496 156" role="img">
+      <title>Ruta de Santiago a Rovaniemi</title>
+      <g class="mapa-pais" transform="translate(30 22)">
+        <path d="M13.8,0 L11.8,2.5 L12.1,7.9 L11.5,16 L11.2,23 L9.1,30.6 L8.6,37.9 L8.8,45.3 L6.9,51.9 L4.4,57.5 L4.1,62.1 L3.3,70 L2.2,75 L0,82.5 L0,89.5 L0.2,96.3 L1.9,102.4 L5.6,106.5 L11.2,110 L18.8,112 L15.8,106.5 L15.8,101.5 L7.2,96.5 L6.5,90.1 L8.4,84.9 L9.5,77.3 L8.1,70.9 L9.3,64.5 L10.2,58 L11.6,51 L12.3,44 L12.8,36.5 L15.3,27.7 L16.3,19.5 L17.4,13.1 L15.1,5.8 Z"/>
+      </g>
+      <g class="mapa-pais" transform="translate(386 30)">
+        <path d="M29.4,0 L21,2.7 L4.2,7.5 L0,11.3 L10,16 L12,24.5 L12.6,34.9 L14.4,42 L19,49.1 L13.4,56.7 L4.2,64.3 L2.6,71.9 L3.2,80.9 L3.4,88 L6.2,91.3 L10.2,95.5 L17.6,96 L23.4,92.7 L28.8,90.3 L33,83.2 L39.5,77.5 L43.1,70 L40.7,60.5 L38.3,52 L36.6,42.5 L34.2,34.9 L37,27.4 L31.4,18.8 L25.8,12.2 L31.4,7.5 Z"/>
+      </g>
+      <path class="mapa-ruta" d="M52,64 Q217,6 382,60"/>
+      <circle class="mapa-halo" cx="41" cy="68.5" r="6"/>
+      <circle class="mapa-punto" cx="41" cy="68.5" r="2.6"/>
+      <circle class="mapa-halo" cx="406.7" cy="64" r="6"/>
+      <circle class="mapa-punto" cx="406.7" cy="64" r="2.6"/>
+      <g class="mapa-avion" transform="translate(217 34) rotate(-2)">
+        <path d="M11,0 L2,-2.2 L-1.5,-9 L-4.5,-9 L-3,-2.2 L-8,-2 L-9.5,-5.2 L-11.5,-5.2 L-10.6,0 L-11.5,5.2 L-9.5,5.2 L-8,2 L-3,2.2 L-4.5,9 L-1.5,9 L2,2.2 Z"/>
+      </g>
+      <text class="mapa-lab" x="40" y="150">Santiago</text>
+      <text class="mapa-lab" x="407" y="150">Rovaniemi</text>
+    </svg>
 
     <div class="sobre">
       <div class="sobre-tit">Transferencia electrónica</div>
@@ -489,7 +536,7 @@ footer{text-align:center;padding:84px 26px 66px;border-top:1px solid var(--line)
     <div class="eyebrow">Confirmación</div>
     <h2>¿Nos acompañas?</h2>
     <p>Te pedimos confirmar tu asistencia antes del</p>
-    <div class="limite">1 de diciembre de 2026</div>
+    <div class="limite">15 de diciembre de 2026</div>
     <form class="rsvp-form" id="rsvp">
       <label class="campo">
         <span class="etq">Nombre y apellido</span>
@@ -538,7 +585,7 @@ footer{text-align:center;padding:84px 26px 66px;border-top:1px solid var(--line)
   <p class="playlist-lead">¡Ayúdanos a armar la playlist!<br>
   ¿Cuál es ese temazo que te hará correr a la pista de baile?</p>
 
-  <a class="spoti" href="https://open.spotify.com/playlist/634oEihsac8OUm5a9AavA1?si=oIkVIITZRnybZIFnlHYv7g&amp;pt=2f30090351d34fb87c4aef5d37709f9e" target="_blank" rel="noopener">
+  <a class="spoti" href="https://open.spotify.com/playlist/634oEihsac8OUm5a9AavA1?si=gY-2leeDR8i0X33oAliPDg&amp;utm_source=copy-link&amp;pi=xixJeYGHT8Whk&amp;pt=5919fcf7e2a8a987118439e077a8f4b2" target="_blank" rel="noopener">
     <span class="spoti-disco">
       <svg viewBox="0 0 24 24" aria-label="Spotify"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.16-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
     </span>
@@ -580,7 +627,7 @@ footer{text-align:center;padding:84px 26px 66px;border-top:1px solid var(--line)
   <div class="faq">
     <details><summary>¿Puedo llevar niños?</summary><p>Amamos a sus hijos, pero hemos decidido que sea una celebración solo para adultos.</p></details>
     <details><summary>¿Hay estacionamiento?</summary><p>Sí, hay estacionamiento para todos dentro del recinto.</p></details>
-    <details><summary>¿Hasta cuándo puedo confirmar?</summary><p>Hasta el 1 de diciembre de 2026, para poder cerrar la lista con el salón.</p></details>
+    <details><summary>¿Hasta cuándo puedo confirmar?</summary><p>Hasta el 15 de diciembre de 2026, para poder cerrar la lista con el salón.</p></details>
     <details><summary>¿Puedo llevar acompañante?</summary><p>Tu invitación indica cuántos cupos tienes reservados. Si tienes dudas, avísanos al confirmar.</p></details>
   </div>
 </section>
@@ -607,16 +654,23 @@ footer{text-align:center;padding:84px 26px 66px;border-top:1px solid var(--line)
 <script>
 /* Fecha del matrimonio: 23 de enero de 2027, 17:00 (Chile continental, verano = UTC-3) */
 var FECHA = new Date('2027-01-23T17:00:00-03:00');
+var reloj;
 function tick(){
   var t = FECHA - new Date();
-  if(t <= 0){ document.querySelector('.count').style.display='none'; return; }
+  if(t <= 0){
+    /* pasada la fecha escondemos el tablero y detenemos el reloj */
+    var tablero = document.querySelector('.tablero');
+    if(tablero) tablero.style.display = 'none';
+    clearInterval(reloj);
+    return;
+  }
   var p = function(n){ return String(n).padStart(2,'0'); };
   document.getElementById('cd').textContent = Math.floor(t/864e5);
   document.getElementById('ch').textContent = p(Math.floor(t/36e5)%24);
   document.getElementById('cm').textContent = p(Math.floor(t/6e4)%60);
   document.getElementById('cs').textContent = p(Math.floor(t/1e3)%60);
 }
-tick(); setInterval(tick,1000);
+tick(); reloj = setInterval(tick,1000);
 
 var io = new IntersectionObserver(function(es){
   es.forEach(function(x){ if(x.isIntersecting) x.target.classList.add('in'); });
@@ -694,16 +748,17 @@ if(form){
     });
   });
   form.querySelectorAll('input[name="Restriccion"]').forEach(function(r){
-    r.addEventListener('change', function(){ cual.hidden = (r.value !== 'Sí'); });
+    r.addEventListener('change', function(){
+      var tiene = (r.value === 'Sí');
+      cual.hidden = !tiene;
+      /* si cambia a "No" hay que borrar lo escrito, si no se envía igual */
+      if(!tiene) cual.value = '';
+    });
   });
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    var datos = {
-      _subject: 'Confirmación de asistencia · Caro & Tomás',
-      _template: 'table',
-      _captcha: 'false'
-    };
+    var datos = {};
     new FormData(form).forEach(function(v, k){ datos[k] = v; });
 
     enviar.disabled = true;
@@ -711,21 +766,33 @@ if(form){
     msg.className = 'rsvp-msg';
     msg.textContent = '';
 
-    var peticion = URL_RSVP
-      ? fetch(URL_RSVP, {
-          method: 'POST',
-          headers: {'Content-Type': 'text/plain;charset=utf-8'},
-          body: JSON.stringify(datos)
-        })
-      : fetch('https://formsubmit.co/ajax/' + CORREO_RSVP, {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-          body: JSON.stringify(datos)
-        });
+    var peticion;
+    if(URL_RSVP){
+      peticion = fetch(URL_RSVP, {
+        method: 'POST',
+        headers: {'Content-Type': 'text/plain;charset=utf-8'},
+        body: JSON.stringify(datos)
+      });
+    } else {
+      /* los campos con guion bajo son de FormSubmit; no se mandan al Apps Script
+         para que no ensucien la planilla con columnas extra */
+      datos._subject  = 'Confirmación de asistencia · Caro & Tomás';
+      datos._template = 'table';
+      datos._captcha  = 'false';
+      peticion = fetch('https://formsubmit.co/ajax/' + CORREO_RSVP, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        body: JSON.stringify(datos)
+      });
+    }
 
     peticion
-    .then(function(r){ if(!r.ok) throw new Error('http'); return r.json(); })
-    .then(function(){
+    .then(function(r){ if(!r.ok) throw new Error('http'); return r.text(); })
+    .then(function(cuerpo){
+      /* Apps Script responde JSON cuando el deployment está publicado para "cualquier
+         persona". Si en cambio devuelve HTML, es la pantalla de login de Google: el
+         dato NO se guardó, así que lo tratamos como error en vez de dar las gracias. */
+      if(/^\s*</.test(cuerpo)) throw new Error('deploy');
       form.classList.add('enviado');
       msg.textContent = '¡Gracias! Tu respuesta quedó registrada.';
     })
@@ -799,9 +866,10 @@ var fotos = Array.prototype.map.call(document.querySelectorAll('.gitem img'), fu
 var visor = document.getElementById('visor');
 var vImg  = document.getElementById('v-img');
 var actual = 0;
-function abrir(i){ actual = i; vImg.src = fotos[i]; visor.hidden = false; document.body.style.overflow='hidden'; }
+function etiqueta(i){ return 'Foto ' + (i+1) + ' de ' + fotos.length; }
+function abrir(i){ actual = i; vImg.src = fotos[i]; vImg.alt = etiqueta(i); visor.hidden = false; document.body.style.overflow='hidden'; }
 function cerrar(){ visor.hidden = true; document.body.style.overflow=''; }
-function mover(d){ actual = (actual + d + fotos.length) % fotos.length; vImg.src = fotos[actual]; }
+function mover(d){ actual = (actual + d + fotos.length) % fotos.length; vImg.src = fotos[actual]; vImg.alt = etiqueta(actual); }
 document.querySelectorAll('.gitem').forEach(function(b){
   b.addEventListener('click', function(){ abrir(+b.dataset.i); });
 });
